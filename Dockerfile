@@ -154,9 +154,9 @@ RUN chmod 644 /etc/logrotate.d/elasticsearch \
 
 ADD ./kibana.yml ${KIBANA_HOME}/config/kibana.yml
 
-SUDO RUN /opt/elasticsearch/bin/elasticsearch-plugin install --batch x-pack
-SUDO RUN /opt/kibana/bin/kibana-plugin install x-pack
-SUDO RUN /opt/logstash/bin/logstash-plugin install x-pack
+RUN /opt/elasticsearch/bin/elasticsearch-plugin install --batch x-pack
+RUN /opt/kibana/bin/kibana-plugin install x-pack
+RUN /opt/logstash/bin/logstash-plugin install x-pack
 
 
 
